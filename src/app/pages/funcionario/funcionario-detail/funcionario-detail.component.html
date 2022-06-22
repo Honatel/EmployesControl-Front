@@ -1,0 +1,92 @@
+<h2>Create</h2>
+<section id="form">
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" #refForm="ngForm">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nomefuncionarios" class="form-label">Nome</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.nome" name="nomefuncionarios" type="text" class="form-control"
+                id="nomefuncionarios" aria-describedby="basic-addon3" placeholder="Primeiro nome">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="sobrenomefuncionarios" class="form-label">Sobrenome</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.sobrenome" name="sobrenomefuncionarios" type="text" class="form-control"
+                id="sobrenomefuncionarios" aria-describedby="basic-addon3" placeholder="Sobrenome">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label for="emailfuncionarios" class="form-label">E-mail</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.email" name="emailfuncionarios" type="text" class="form-control"
+                id="emailfuncionarios" aria-describedby="basic-addon3" placeholder="E-email">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="Isliderfuncionarios" class="form-label">Funcionario é lider?</label>
+            <label>Funcionario é lider?</label>
+            <input [(ngModel)]="funcionario.isLider" type="checkbox" class="col-md-4" name="Isliderfuncionarios">
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="telefonesfuncionarios" class="form-label">Telefone</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.telefones" name="telefonesfuncionarios" type="text" class="form-control"
+                id="telefonesfuncionarios" aria-describedby="basic-addon3" placeholder="Telefone">
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="dddfuncionarios" class="form-label">DDD</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.ddd" name="dddfuncionarios" type="text" class="form-control"
+                id="dddfuncionarios" aria-describedby="basic-addon3" placeholder="DDD">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="nnumeroChapa" class="form-label">Numero Chapa</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.numeroChapa" name="nnumeroChapa" type="text" class="form-control"
+                id="nnumeroChapa" aria-describedby="basic-addon3" disabled="true">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-6">
+            <label for="passWordFuncionario" class="form-label">Senha</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="funcionario.ddd" name="passWordFuncionario" type="password" class="form-control"
+                id="passWordFuncionario" aria-describedby="basic-addon3" placeholder="Senha">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Selecione o lider</label>
+            <div class="input-group mb-3">
+              <select name="my-select" [(ngModel)]="mySelect" class="form-control col-md-4" (change)="selectChange()">
+                <option class="col-md-4" *ngFor="let lider of Lideres" value="{{lider.id}}">
+                  {{lider.nome}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">Salvar</button>
+      <button type="submit" class="btn btn-secondary" [routerLink]="['funcionariosionario']">Cancelar</button>
+    </form>
+  </div>
+</section>

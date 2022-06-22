@@ -1,0 +1,33 @@
+<p>Funcionarios</p>
+<hr />
+<button type="button" class="btn btn-primary mb-2" routerLink="create">
+  Novo Funcionario
+</button>
+
+<section>
+  <div *ngIf="funcionarios.length === 0" class="alert alert-warning" role="alert">
+    Não há registros cadastrados
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item func-item" *ngFor="let func of funcionarios">
+      <div [innerHTML]="func.nome" class="func-item-description"></div>
+      <div [innerHTML]="func.sobrenome" class="func-item-description"></div>
+      <div [innerHTML]="func.email" class="func-item-description"></div>
+      <div [innerHTML]="func.nomelider" class="func-item-description"></div>
+      <div [innerHTML]="func.telefones" class="func-item-description"></div>
+      <div [innerHTML]="func.ddd" class="func-item-description"></div>
+      <div [innerHTML]="func.isLider" *ngIf="func.isLider" class="func-item-description"></div>
+      <div>
+        <button type="button" [routerLink]="['/funcionario/edit/', func.id]" class="btn btn-primary mr1">
+          Editar
+        </button>
+      </div>
+      <div>
+        <button type="button" (click)="removeFuncionario(func?.id)" class="btn btn-danger">
+          Excluir
+        </button>
+      </div>
+    </li>
+  </ul>
+</section>

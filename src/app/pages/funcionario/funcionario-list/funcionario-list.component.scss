@@ -1,0 +1,9 @@
+.func-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.func-item-description {
+  flex-grow: 1;
+}

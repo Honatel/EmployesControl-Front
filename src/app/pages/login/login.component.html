@@ -1,0 +1,26 @@
+<section id="form">
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" #refForm="ngForm">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="userName" class="form-label">Nome</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="user.userName" name="userName" type="text" class="form-control" id="userName"
+                aria-describedby="basic-addon3" placeholder="Nome do usuario">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="password" class="form-label">Sobrenome</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="user.password" name="password" type="text" class="form-control" id="v"
+                aria-describedby="basic-addon3" placeholder="Senha">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">Login</button>
+    </form>
+  </div>
+</section>
