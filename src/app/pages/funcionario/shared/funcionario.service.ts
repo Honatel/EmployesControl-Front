@@ -68,9 +68,8 @@ export class FuncionarioService {
 
   public async delete(id?: number): Promise<Funcionario[]> {
     debugger;
-    var t = this.getHeaders();
     return lastValueFrom(
-      this.http.post<Funcionario[]>(`${this.resource}/delete/${id}`, this.getHeaders())
+      this.http.delete<Funcionario[]>(`${this.resource}/${id}`, this.getHeaders())
     ).then().catch();
   }
 }
