@@ -17,7 +17,7 @@
       <div [innerHTML]="func.nomelider" class="func-item-description"></div>
       <div [innerHTML]="func.telefones" class="func-item-description"></div>
       <div [innerHTML]="func.ddd" class="func-item-description"></div>
-      <div [innerHTML]="func.isLider" *ngIf="func.isLider" class="func-item-description"></div>
+      <div [innerHTML]="func.lider" *ngIf="func.lider" class="func-item-description"></div>
       <div>
         <button type="button" [routerLink]="['/funcionario/edit/', func.id]" class="btn btn-primary mr1">
           Editar

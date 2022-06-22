@@ -24,11 +24,9 @@ export class FormComponent implements OnInit {
   async onSubmit() {
     const checked = document.getElementsByName('IsliderFunc')[0] as HTMLInputElement | null;
     if (checked?.checked)
-      this.funcionarios.isLider = true;
+      this.funcionarios.lider = true;
 
     this.funcionarios.liderId = this.lastSelected;
-    this.funcionarios.telefones = ['671887'];
-
     await this.funcService.post(this.funcionarios)
   }
 

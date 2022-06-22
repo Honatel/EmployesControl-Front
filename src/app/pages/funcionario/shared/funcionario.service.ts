@@ -15,7 +15,10 @@ export class FuncionarioService {
 
   private getHeaders() {
     return {
-      headers: { 'Content-Type': 'application/json', "Authorization": `Bearer ${this.authService.getTokenStorage()}` }
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.authService.getTokenStorage()}`
+      }
     }
   }
 
@@ -35,7 +38,7 @@ export class FuncionarioService {
       this.http.get<Funcionario[]>(this.resource, this.getHeaders())
     ).then().catch();
 
-    return result.filter((value) => value.isLider);
+    return result.filter((value) => value.lider);
   }
 
   public async getAll(): Promise<any[]> {
@@ -51,6 +54,7 @@ export class FuncionarioService {
   }
 
   public async post(funcionario: Funcionario): Promise<Funcionario[]> {
+    debugger;
     return lastValueFrom(
       this.http.post<Funcionario[]>(this.resource, JSON.stringify(funcionario), this.getHeaders())
     ).then().catch();
@@ -63,8 +67,10 @@ export class FuncionarioService {
   }
 
   public async delete(id?: number): Promise<Funcionario[]> {
+    debugger;
+    var t = this.getHeaders();
     return lastValueFrom(
-      this.http.delete<Funcionario[]>(`${this.resource}/${id}`, this.getHeaders())
+      this.http.post<Funcionario[]>(`${this.resource}/delete/${id}`, this.getHeaders())
     ).then().catch();
   }
 }

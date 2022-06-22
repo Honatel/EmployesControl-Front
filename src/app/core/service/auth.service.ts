@@ -24,8 +24,6 @@ export class AuthService {
   }
 
   public async getToken(user: User): Promise<any> {
-
-    debugger;
     var objTOken = {
       userName: user.userName,
       password: user.password,
@@ -35,6 +33,7 @@ export class AuthService {
     return lastValueFrom(
       this.http.post<any>(url, objTOken, this.headerAuthentication)
     ).then((resp) => {
+      debugger;
       const jwtDecoded = jwtDecode(resp.token) as any;
       this.storageToken(resp.token);
       localStorage.setItem('TIME_EXPIRE', jwtDecoded.exp);

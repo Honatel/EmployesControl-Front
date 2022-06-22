@@ -10,7 +10,7 @@ export class Funcionario {
     public liderId?: number,
     public telefones?: string[],
     public ddd?: string[],
-    public isLider?: boolean,
-    public password?: string,
+    public lider?: boolean,
+    public senha?: string,
   ) { };
 }

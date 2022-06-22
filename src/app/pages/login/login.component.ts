@@ -16,7 +16,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.getToken(this.user);
+    debugger;
+    const result = this.authService.getToken(this.user);
+    console.log(result)
     this.router.navigate(['/funcionario'])
   }
 }
